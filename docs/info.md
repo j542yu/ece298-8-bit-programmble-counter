@@ -8,13 +8,14 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+Task 1 for ECE298A
 
-Explain how your project works
+8 bit programmable binary counter with asynch reset, synchronous load, and tri-state output.
 
 ## How to test
 
-Explain how to use your project
+To update
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+N/A

@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module ece298a_task_1 (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -16,12 +16,22 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+  // Want uio_oe[1:0] to be input so set to 0
+  // Remaining bits also set to 0 because unused so don't care
+  assign uio_oe  = 0; 
+
+  assign uio_out = 0; // Unused so assign 0
+
+  eight_bit_counter eight_bit_counter_inst (
+    .clk(clk),
+    .rst_n(rst_n),
+    .enable(uio_in[0]),
+    .load(uio_in[1]),
+    .data(ui_in),
+    .value_buf(uo_out)
+  );
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, uio_in[7:1], 1'b0};
 
 endmodule
