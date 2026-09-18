@@ -28,7 +28,7 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  ece298a_task_1 user_project (
+  ece298a_8_bit_counter user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST

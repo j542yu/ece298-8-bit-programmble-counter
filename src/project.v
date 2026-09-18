@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2026 Judy Yu
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ module ece298a_8_bit_counter (
 
     Since also need count enable, tri-state enable, and load signals
     as inputs, cannot use ui_in for 8-bit counter load thus data to load
-    in will be shared on the bidirectional pins on uio_in
+    in will be shared on the bidirectional pins on uio_in[7:0]
 
     Assignments:
     ui_in[0] = enable_count
