@@ -16,6 +16,9 @@ module tt_um_ece298a_8_bit_counter (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+  // Unused outputs must be assigned 0
+  assign uo_out = 0;
+
   /*
     To allow for tri-state output, must use the bidirectional
     uio_out as output so that uio_oe = 0 which disables output,
@@ -74,6 +77,6 @@ module tt_um_ece298a_8_bit_counter (
   end
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, 1'b0};
+  wire _unused = &{ena, ui_in[7:0], 1'b0};
 
 endmodule
